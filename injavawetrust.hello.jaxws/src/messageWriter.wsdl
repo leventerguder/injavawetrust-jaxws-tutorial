@@ -11,7 +11,7 @@
 	name="MessageWriterImplService">
 	<types />
 	<message name="getWelcomeMessage">
-		<part name="arg0" type="xsd:string" />
+		<part name="userName" type="xsd:string" />
 	</message>
 	<message name="getWelcomeMessageResponse">
 		<part name="return" type="xsd:string" />
