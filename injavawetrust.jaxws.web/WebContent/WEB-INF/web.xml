@@ -17,7 +17,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>JAXWSServlet</servlet-name>
-		<url-pattern>//employeeServiceWS</url-pattern>
+		<url-pattern>/employeeServiceWS</url-pattern>
 	</servlet-mapping>
 
 </web-app>

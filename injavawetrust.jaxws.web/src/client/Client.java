@@ -2,6 +2,7 @@ package client;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.xml.namespace.QName;
@@ -10,10 +11,8 @@ import javax.xml.ws.Service;
 import model.Employee;
 import service.EmployeeService;
 
-//1- run the WebServicePublisher
-//2- test Client.java
-
 public class Client {
+
 	private static String WEB_SERVICE_WSDL_URL = "http://localhost:8080/injavawetrust.jaxws.web/employeeServiceWS?wsdl";
 
 	public static void main(String[] args) throws MalformedURLException {
@@ -23,12 +22,28 @@ public class Client {
 		Service service = Service.create(url, qname);
 
 		EmployeeService employeeService = service.getPort(EmployeeService.class);
-
+		// add employees
 		employeeService.addEmployee(new Employee(1, "Levent", "Erguder", 1000));
-		employeeService.addEmployee(new Employee(2, "Levent", "Erguder", 1000));
-		employeeService.addEmployee(new Employee(3, "Levent", "Erguder", 1000));
+		employeeService.addEmployee(new Employee(2, "Burak", "Okumus", 30000));
+		employeeService.addEmployee(new Employee(3, "Recep", "Bostanci", 2000));
+		employeeService.addEmployee(new Employee(4, "Ozkan", "Ozbas", 10000));
 
-		System.out.println(employeeService.getEmployeeWrapper().getEmployees());
+		// getEmployee
+		Employee employee = employeeService.getEmployee(2);
+		System.out.println("getEmployee :");
+		System.out.println(employee);
+		System.out.println();
+
+		// getEmployeesWithWrapper
+		List<Employee> employees = employeeService.getEmployeesWithWrapper().getEmployees();
+		System.out.println("getEmployeesWithWrapper :");
+		employees.stream().forEach(System.out::println);
+		System.out.println();
+
+		// getEmployeesWithArray
+		List<Employee> employees2 = Arrays.asList(employeeService.getEmployeesWithArray());
+		System.out.println("getEmployeesWithArray :");
+		employees2.stream().forEach(System.out::println);
 
 	}
 }

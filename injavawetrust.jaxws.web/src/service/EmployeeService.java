@@ -15,9 +15,12 @@ public interface EmployeeService {
 	public void addEmployee(@WebParam(name = "employee") Employee employee);
 
 	@WebMethod
-	public EmployeeListWrapper getEmployeeWrapper();
+	public Employee getEmployee(@WebParam(name = "id") int id);
 
 	@WebMethod
-	public Employee[] getEmployeeArray();
+	public EmployeeListWrapper getEmployeesWithWrapper();
+
+	@WebMethod
+	public Employee[] getEmployeesWithArray();
 
 }

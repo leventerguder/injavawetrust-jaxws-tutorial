@@ -13,4 +13,10 @@ public class EmployeeListWrapper {
 	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
+
+	@Override
+	public String toString() {
+		return "EmployeeListWrapper [employees=" + employees + "]";
+	}
+	
 }
