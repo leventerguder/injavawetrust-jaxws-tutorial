@@ -1,9 +1,10 @@
 package service;
 
 public class HelloWorldImpl implements HelloWorld {
-
-	public String sayHi(String text) {
+	
+	@Override
+	public String sayHi(String username) {
 		System.out.println("sayHi is called !");
-		return "Hello, " + text;
+		return "Hello, " + username;
 	}
 }

@@ -7,14 +7,17 @@ import service.HelloWorldImpl;
 
 public class CXFWebServicePublisher {
 
+	private static String URL = "http://localhost:9000/Hello";
+	
 	public static void main(String args[]) throws Exception {
 
+		ServerFactoryBean serverFactory = new ServerFactoryBean();
 		HelloWorldImpl helloworldImpl = new HelloWorldImpl();
-		ServerFactoryBean svrFactory = new ServerFactoryBean();
-		svrFactory.setServiceClass(HelloWorld.class);
-		svrFactory.setAddress("http://localhost:9000/Hello");
-		svrFactory.setServiceBean(helloworldImpl);
-		svrFactory.create();
+		
+		serverFactory.setServiceClass(HelloWorld.class);
+		serverFactory.setAddress(URL);
+		serverFactory.setServiceBean(helloworldImpl);
+		serverFactory.create();
 
 		System.out.println("CXF Web Service is publishing...");
 	}
