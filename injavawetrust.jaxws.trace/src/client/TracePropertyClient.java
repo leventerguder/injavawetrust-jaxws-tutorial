@@ -11,7 +11,7 @@ import service.TraceWriter;
 public class TracePropertyClient {
 
 	// TCP/IP Monitor "local port"
-	private static String WEB_SERVICE_WSDL_URL = "http://localhost:8082/injavawetrust/trace.writer?wsdl";
+	private static String WEB_SERVICE_WSDL_URL = "http://localhost:8888/injavawetrust/trace.writer?wsdl";
 
 	public static void main(String[] args) throws MalformedURLException {
 
