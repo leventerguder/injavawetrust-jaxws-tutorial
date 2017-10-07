@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
-	<display-name>injavawetrust.jaxws.tutorial</display-name>
+	<display-name>injavawetrust.jaxws.web</display-name>
 
 	<listener>
 		<listener-class>
