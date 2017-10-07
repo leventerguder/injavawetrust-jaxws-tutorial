@@ -1,4 +1,4 @@
-package service;
+package injavawetrust.ws.service;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -11,5 +11,6 @@ import javax.jws.soap.SOAPBinding.Style;
 public interface MessageWriter {
 
 	@WebMethod
-	public String getWelcomeMessage(@WebParam(name = "userName") String userName);
+	public String getWelcomeMessage(@WebParam(name = "name") String name, 
+									@WebParam(name = "surname") String surname);
 }

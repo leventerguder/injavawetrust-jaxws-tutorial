@@ -6,21 +6,24 @@
 	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
 	xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
 	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-	xmlns:tns="http://service/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://service/"
+	xmlns:tns="http://service.ws.injavawetrust/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://service.ws.injavawetrust/"
 	name="MessageWriterImplService">
 	<types />
 	<message name="getWelcomeMessage">
-		<part name="userName" type="xsd:string" />
+		<part name="name" type="xsd:string" />
+		<part name="surname" type="xsd:string" />
 	</message>
 	<message name="getWelcomeMessageResponse">
 		<part name="return" type="xsd:string" />
 	</message>
 	<portType name="MessageWriter">
-		<operation name="getWelcomeMessage">
-			<input wsam:Action="http://service/MessageWriter/getWelcomeMessageRequest"
+		<operation name="getWelcomeMessage" parameterOrder="name surname">
+			<input
+				wsam:Action="http://service.ws.injavawetrust/MessageWriter/getWelcomeMessageRequest"
 				message="tns:getWelcomeMessage" />
-			<output wsam:Action="http://service/MessageWriter/getWelcomeMessageResponse"
+			<output
+				wsam:Action="http://service.ws.injavawetrust/MessageWriter/getWelcomeMessageResponse"
 				message="tns:getWelcomeMessageResponse" />
 		</operation>
 	</portType>
@@ -30,10 +33,10 @@
 		<operation name="getWelcomeMessage">
 			<soap:operation soapAction="" />
 			<input>
-				<soap:body use="literal" namespace="http://service/" />
+				<soap:body use="literal" namespace="http://service.ws.injavawetrust/" />
 			</input>
 			<output>
-				<soap:body use="literal" namespace="http://service/" />
+				<soap:body use="literal" namespace="http://service.ws.injavawetrust/" />
 			</output>
 		</operation>
 	</binding>
