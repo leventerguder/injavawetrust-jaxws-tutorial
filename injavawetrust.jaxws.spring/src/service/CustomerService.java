@@ -1,6 +1,6 @@
-package com.jcombat.services.customers;
+package service;
 
-import com.jcombat.entity.Customer;
+import domain.Customer;
 
 public interface CustomerService {
 	public Customer getCustomerById(String customerId);

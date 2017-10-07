@@ -1,12 +1,12 @@
-package com.jcombat.services.customers;
+package service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import domain.Customer;
 
-import com.jcombat.entity.Customer;
-
-@Component
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
+	@Override
 	public Customer getCustomerById(String customerId) {
 		Customer customer = new Customer();
 		customer.setId(1000);

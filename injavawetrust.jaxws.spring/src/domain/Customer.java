@@ -1,6 +1,7 @@
-package com.jcombat.entity;
+package domain;
 
 public class Customer {
+	
 	private int id;
 	private String name;
 
