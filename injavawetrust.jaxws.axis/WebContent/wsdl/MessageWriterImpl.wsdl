@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.ws.injavawetrust" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.ws.injavawetrust" xmlns:intf="http://service.ws.injavawetrust" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.ws.injavawetrust" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getWelcomeMessage">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="surname" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getWelcomeMessageResponse">
+    <complexType>
+     <sequence>
+      <element name="getWelcomeMessageReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getWelcomeMessageResponse">
+
+      <wsdl:part element="impl:getWelcomeMessageResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getWelcomeMessageRequest">
+
+      <wsdl:part element="impl:getWelcomeMessage" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MessageWriterImpl">
+
+      <wsdl:operation name="getWelcomeMessage">
+
+         <wsdl:input message="impl:getWelcomeMessageRequest" name="getWelcomeMessageRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getWelcomeMessageResponse" name="getWelcomeMessageResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MessageWriterImplSoapBinding" type="impl:MessageWriterImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getWelcomeMessage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getWelcomeMessageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getWelcomeMessageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MessageWriterImplService">
+
+      <wsdl:port binding="impl:MessageWriterImplSoapBinding" name="MessageWriterImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/injavawetrust.jaxws.axis/services/MessageWriterImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
